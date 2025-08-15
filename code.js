@@ -134,12 +134,13 @@ function showGameResult(winner, loser) {
         ? '<br><img src="https://i.imgur.com/WGq9YR9.jpeg" alt="كنان" class="loser-image" style="width:100px !important; height:auto !important; display:inline-block; vertical-align:middle;">'
         : '';
 
-        const endGameSound = new Audio("gameover.mp3"); // موجود في نفس المجلد
-    endGameSound.volume = 0.9; // اختياري
-    endGameSound.play().catch(() => {}); // لتفادي مشاكل التشغيل التلقائي
-    if (loserName === "صقر" || loserName === "kkk") {
+        let soundFile = "gameover.mp3"; // الصوت الافتراضي
+    if (loserName === "صقر" || loserName === "sa8rgg") {
         soundFile = "sa8rgg.mp3"; // الصوت الخاص بصقر
     }
+    endGameSound.volume = 0.9; // اختياري
+    endGameSound.play().catch(() => {}); // لتفادي مشاكل التشغيل التلقائي
+
 
     gameStatus.innerHTML = `
     <div class="game-won">
