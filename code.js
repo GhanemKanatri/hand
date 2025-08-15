@@ -138,7 +138,7 @@ function showGameResult(winner, loser) {
     // اختيار الصوت حسب اسم الخاسر
     let soundFile = "gameover.mp3"; // الصوت الافتراضي
     if (loserName === "صقر" || loserName === "sa8rgg") {
-        soundFile = "sa8rgg.mp3"; // الصوت الخاص بصقر
+        soundFile = "saker.mp3"; // الصوت الخاص بصقر
     }
 
     // تشغيل الصوت
