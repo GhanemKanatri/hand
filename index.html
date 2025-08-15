@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hand - تسجيل النتائج</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="code.js">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🎴 Hand</h1>
+    </div>
+
+    <div class="game-setup" id="setup">
+        <div class="player-inputs">
+            <div class="player-input">
+                <label for="player1">اسم اللاعب الأول:</label>
+                <input type="text" id="player1" placeholder="أدخل اسم اللاعب الأول" />
+            </div>
+            <div class="player-input">
+                <label for="player2">اسم اللاعب الثاني:</label>
+                <input type="text" id="player2" placeholder="أدخل اسم اللاعب الثاني" />
+            </div>
+        </div>
+        <button class="start-btn" onclick="startGame()">🎯 ابدأ اللعبة</button>
+    </div>
+
+    <div class="game-board" id="gameBoard">
+        <div id="gameStatus"></div>
+
+        <table class="score-table">
+            <thead>
+            <tr>
+                <th id="header1">اللاعب الأول</th>
+                <th id="header2">اللاعب الثاني</th>
+            </tr>
+            </thead>
+            <tbody id="scoresBody"></tbody>
+            <tfoot>
+            <tr class="total-row">
+                <td class="total-score" id="total1">0</td>
+                <td class="total-score" id="total2">0</td>
+            </tr>
+            </tfoot>
+        </table>
+
+        <div class="controls">
+            <button class="btn btn-add" onclick="addRound()">➕ إضافة جولة</button>
+            <button class="btn btn-reset" onclick="resetScores()">🔄 مسح النتائج</button>
+            <button class="btn btn-new" onclick="newGame()">🆕 لعبة جديدة</button>
+        </div>
+    </div>
+</div>
+
+<!-- Load JS correctly -->
+<script defer src="code.js"></script>
+</body>
+</html>
