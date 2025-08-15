@@ -129,10 +129,15 @@ function isGameFinished() {
 
 function showGameResult(winner, loser) {
     const gameStatus = document.getElementById("gameStatus");
+    const loserName = loser.toLowerCase().trim();
+    const loserImage = (loserName === "كنان" || loserName === "kenan")
+        ? '<br><img src="https://i.imgur.com/WGq9YR9.jpeg" alt="كنان" class="loser-image">'
+        : '';
     gameStatus.innerHTML = `
     <div class="game-won">
       🎉 تهانينا! ${winner} فاز باللعبة!<br>
       😔 ${loser} خسر بوصوله إلى 751 نقطة
+      ${loserImage}
     </div>
   `;
 }
