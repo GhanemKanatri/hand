@@ -137,6 +137,9 @@ function showGameResult(winner, loser) {
         const endGameSound = new Audio("gameover.mp3"); // موجود في نفس المجلد
     endGameSound.volume = 0.9; // اختياري
     endGameSound.play().catch(() => {}); // لتفادي مشاكل التشغيل التلقائي
+    if (loserName === "صقر" || loserName === "kkk") {
+        soundFile = "sa8rgg.mp3"; // الصوت الخاص بصقر
+    }
 
     gameStatus.innerHTML = `
     <div class="game-won">
