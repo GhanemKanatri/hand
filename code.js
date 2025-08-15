@@ -133,6 +133,11 @@ function showGameResult(winner, loser) {
     const loserImage = (loserName === "كنان" || loserName === "kenan")
         ? '<br><img src="https://i.imgur.com/WGq9YR9.jpeg" alt="كنان" class="loser-image" style="width:100px !important; height:auto !important; display:inline-block; vertical-align:middle;">'
         : '';
+
+        const endGameSound = new Audio("gameover.mp3"); // موجود في نفس المجلد
+    endGameSound.volume = 0.9; // اختياري
+    endGameSound.play().catch(() => {}); // لتفادي مشاكل التشغيل التلقائي
+
     gameStatus.innerHTML = `
     <div class="game-won">
       🎉 تهانينا! ${winner} فاز باللعبة!<br>
