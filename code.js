@@ -126,21 +126,25 @@ function isGameFinished() {
     const total2 = parseInt(document.getElementById("total2").textContent) || 0;
     return total1 >= 751 || total2 >= 751;
 }
-
 function showGameResult(winner, loser) {
     const gameStatus = document.getElementById("gameStatus");
     const loserName = loser.toLowerCase().trim();
+
+    // صورة كنان إذا كان الخاسر كنان
     const loserImage = (loserName === "كنان" || loserName === "kenan")
-        ? '<br><img src="https://i.imgur.com/WGq9YR9.jpeg" alt="كنان" class="loser-image" style="width:100px !important; height:auto !important; display:inline-block; vertical-align:middle;">'
+        ? '<br><img src="https://i.imgur.com/WGq9YR9.jpeg" alt="كنان" style="width:100px !important; height:auto !important; display:inline-block; vertical-align:middle;">'
         : '';
 
-        let soundFile = "gameover.mp3"; // الصوت الافتراضي
+    // اختيار الصوت حسب اسم الخاسر
+    let soundFile = "gameover.mp3"; // الصوت الافتراضي
     if (loserName === "صقر" || loserName === "sa8rgg") {
         soundFile = "sa8rgg.mp3"; // الصوت الخاص بصقر
     }
-    endGameSound.volume = 0.9; // اختياري
-    endGameSound.play().catch(() => {}); // لتفادي مشاكل التشغيل التلقائي
 
+    // تشغيل الصوت
+    const endGameSound = new Audio(soundFile);
+    endGameSound.volume = 0.9; // اختياري
+    endGameSound.play().catch(() => {});
 
     gameStatus.innerHTML = `
     <div class="game-won">
@@ -150,7 +154,6 @@ function showGameResult(winner, loser) {
     </div>
   `;
 }
-
 function resetScores() {
     if (!confirm("هل أنت متأكد من مسح جميع النتائج؟")) return;
 
