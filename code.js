@@ -131,7 +131,7 @@ function showGameResult(winner, loser) {
     const gameStatus = document.getElementById("gameStatus");
     const loserName = loser.toLowerCase().trim();
 const loserImage = (loserName === "كنان" || loserName === "kenan")
-    ? '<br><img src="https://i.imgur.com/WGq9YR9.jpeg" alt="كنان" class="loser-image" style="width:100px;height:auto;">'
+    ? '<br><img src="https://i.imgur.com/WGq9YR9.jpeg" alt="كنان" class="loser-image" style="width:50px;height:50px;">'
     : '';
     gameStatus.innerHTML = `
     <div class="game-won">
